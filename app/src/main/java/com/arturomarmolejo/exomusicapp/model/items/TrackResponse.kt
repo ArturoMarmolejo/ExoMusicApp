@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class Result(
+data class TrackResponse(
     @Json(name = "artistId")
     val artistId: Int?,
     @Json(name = "artistName")

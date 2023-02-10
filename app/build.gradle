@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    //id 'dagger.hilt.android.plugin'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -44,6 +44,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.0'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-ktx:+'
     implementation 'androidx.core:core-ktx:+'
     implementation 'androidx.core:core-ktx:+'
     testImplementation 'junit:junit:4.13.2'
@@ -91,5 +92,13 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // exoplayer
+    implementation 'androidx.media3:media3-exoplayer:1.0.0-beta03'
+    implementation 'androidx.media3:media3-ui:1.0.0-beta03'
+    implementation 'androidx.media3:media3-exoplayer-dash:1.0.0-beta03'
+
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
 
 }

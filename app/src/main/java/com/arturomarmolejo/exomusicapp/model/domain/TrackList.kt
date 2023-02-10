@@ -2,7 +2,7 @@ package com.arturomarmolejo.exomusicapp.model.domain
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.arturomarmolejo.exomusicapp.model.items.Result
+import com.arturomarmolejo.exomusicapp.model.items.TrackResponse
 
 //    {"wrapperType":"track", "kind":"song", "artistId":503970811, "collectionId":1440825109, "trackId":1440825761,
 //        "artistName":"Iggy Azalea", "collectionName":"The New Classic (Deluxe Version)", "trackName":"Fancy (feat. Charli XCX)",
@@ -25,14 +25,16 @@ data class TrackListEntity (
     val artistName: String,
     val artworkURL60: String,
     val trackPrice: Double,
+    val primaryGenreName: String
 )
 
-fun Result?.mapToTrackList(): TrackListEntity =
+fun TrackResponse?.mapToTrackList(): TrackListEntity =
     TrackListEntity(
         trackId = this?.trackId ?: 0,
         artistName = this?.artistName ?: "-",
         artworkURL60 = this?.artworkUrl30 ?: "-",
         trackPrice = this?.trackPrice ?: 0.00,
+        primaryGenreName = this?.primaryGenreName ?: "-"
     )
 
 

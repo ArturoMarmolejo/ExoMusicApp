@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TrackListResponse(
     @Json(name = "resultCount")
-    val resultCount: Int,
+    val resultCount: Int? = null,
     @Json(name = "results")
-    val results: List<Result>
+    val results: List<TrackResponse>? = null
 )
