@@ -7,7 +7,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.arturomarmolejo.exomusicapp.R
 import com.arturomarmolejo.exomusicapp.databinding.FragmentTrackListBinding
 import com.arturomarmolejo.exomusicapp.model.items.TrackListResponse
 import com.arturomarmolejo.exomusicapp.utils.BaseFragment
@@ -21,6 +23,7 @@ class ClassicFragment: BaseFragment() {
     private val genresAdapter by lazy {
         ExoMusicAdapter {
             exoMusicViewModel.trackUri = it
+            findNavController().navigate(R.id.action_classicFragment_to_playerFragment)
         }
     }
 

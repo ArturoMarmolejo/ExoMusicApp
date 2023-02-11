@@ -1,11 +1,10 @@
 package com.arturomarmolejo.exomusicapp.viewmodel
 
-import android.provider.Contacts.Intents.UI
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.arturomarmolejo.exomusicapp.model.domain.TrackListEntity
+import com.arturomarmolejo.exomusicapp.databinding.RvTrackItemBinding
 import com.arturomarmolejo.exomusicapp.model.items.TrackListResponse
 import com.arturomarmolejo.exomusicapp.rest.ExoMusicRepository
 import com.arturomarmolejo.exomusicapp.utils.UIState
@@ -19,8 +18,10 @@ import javax.inject.Inject
 @HiltViewModel
 class ExoMusicViewModel @Inject constructor(
     private val exoMusicRepository: ExoMusicRepository,
-    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
+
 ): ViewModel() {
+
+    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 
     private val genres = arrayListOf("classic", "rock", "pop")
     var trackUri : String = ""

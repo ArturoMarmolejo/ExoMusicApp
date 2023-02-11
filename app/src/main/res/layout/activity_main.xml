@@ -9,14 +9,16 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frag_container"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:defaultNavHost="true"
+        app:navGraph="@navigation/nav"
        >
     </androidx.fragment.app.FragmentContainerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_bottom"
+        app:menu="@menu/exomusic_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="parent"

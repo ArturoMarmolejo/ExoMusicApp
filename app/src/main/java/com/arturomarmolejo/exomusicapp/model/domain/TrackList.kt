@@ -20,21 +20,19 @@ import com.arturomarmolejo.exomusicapp.model.items.TrackResponse
 
 @Entity("TrackList")
 data class TrackListEntity (
-    @PrimaryKey
     val trackId: Int,
     val artistName: String,
     val artworkURL60: String,
     val trackPrice: Double,
-    val primaryGenreName: String
 )
 
 fun TrackResponse?.mapToTrackList(): TrackListEntity =
     TrackListEntity(
         trackId = this?.trackId ?: 0,
         artistName = this?.artistName ?: "-",
-        artworkURL60 = this?.artworkUrl30 ?: "-",
+        artworkURL60 = this?.artworkUrl60 ?: "-",
         trackPrice = this?.trackPrice ?: 0.00,
-        primaryGenreName = this?.primaryGenreName ?: "-"
+
     )
 
 

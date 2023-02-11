@@ -2,16 +2,38 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav"
-    app:startDestination="@id/baseFragment">
-
+    app:startDestination="@id/classicFragment"
+    android:id="@+id/nav">
     <fragment
-        android:id="@+id/baseFragment"
-        android:name="com.arturomarmolejo.exomusicapp.utils.BaseFragment"
-        android:label="BaseFragment" />
+        android:id="@+id/popFragment"
+        android:name="com.arturomarmolejo.exomusicapp.views.pop.PopFragment"
+        android:label="PopFragment"
+        tools:layout="@layout/fragment_track_list">
+        <action
+            android:id="@+id/action_popFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/trackListFragment"
-        android:name="com.arturomarmolejo.exomusicapp.views.TrackListFragment"
-        android:label="fragment_track_list"
-        tools:layout="@layout/fragment_track_list" />
+        android:id="@+id/rockFragment"
+        android:name="com.arturomarmolejo.exomusicapp.views.rock.RockFragment"
+        android:label="RockFragment"
+        tools:layout="@layout/fragment_track_list">
+        <action
+            android:id="@+id/action_rockFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/classicFragment"
+        android:name="com.arturomarmolejo.exomusicapp.views.rock.RockFragment"
+        android:label="RockFragment"
+        tools:layout="@layout/fragment_track_list">
+        <action
+            android:id="@+id/action_classicFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.arturomarmolejo.exomusicapp.views.PlayerFragment"
+        android:label="fragment_exoplayer"
+        tools:layout="@layout/fragment_exoplayer" />
 </navigation>

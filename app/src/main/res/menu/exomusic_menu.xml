@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/classic_trackList"
+        android:id="@+id/classicFragment"
         android:title="Classic"
         android:icon="@drawable/baseline_library_music_24"
         >
     </item>
 
     <item
-        android:id="@+id/pop_trackList"
+        android:id="@+id/popFragment"
         android:title="Pop"
         android:icon="@drawable/baseline_library_music_24"
         >
     </item>
 
     <item
-        android:id="@+id/rock_trackList"
+        android:id="@+id/rockFragment"
         android:title="Rock"
         android:icon="@drawable/baseline_library_music_24"
         >

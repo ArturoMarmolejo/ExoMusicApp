@@ -27,17 +27,17 @@ interface ExoMusicApi {
 
     @GET(SEARCH)
     suspend fun getTrackListByGenre(
-       @Query("searchTerm") searchTerm: String,
-       @Query("amp;media", encoded = true) media: String,
-       @Query("amp;entity", encoded = true) entity: String,
-       @Query("amp;limit", encoded = true) limit: String,
+       @Query("term") term: String,
+       @Query("amp;media", encoded = true) media: String = "music",
+       @Query("amp;entity", encoded = true) entity: String = "song",
+       @Query("amp;limit", encoded = true) limit: String = "50",
     ): Response<TrackListResponse>
 
 
     companion object {
 
-        const val BASE_URL = "https://itunes.apple.com"
-        const val SEARCH ="search"
+        const val BASE_URL = "https://itunes.apple.com/"
+        private const val SEARCH = "search"
 
     }
 }
