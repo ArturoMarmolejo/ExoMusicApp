@@ -40,17 +40,21 @@ class ExoMusicViewModel1(
     private val binding: RvTrackItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun Double.format(digits: Int) = "%. ${digits}f".format(this)
+    //fun Double.format(digits: Int) = "%. ${digits}f".format(this)
 
     fun bind(item: TrackResponse, onItemClick: (String) -> Unit) {
         binding.musicAlbumImage.setImageResource(R.drawable.baseline_library_music_24)
         binding.trackTitle.text = item.trackName ?: "NO NAME PROVIDED"
         binding.artistName.text = item.artistName ?: "NO NAME PROVIDED"
         val trackPrice = // Validation for a track having individual price. It it does not, displays de price of the whole album.
-            if(item.trackName != null)  "${item.trackPrice?.format(2).toString()} USD"
-            else "${item.collectionPrice?.format(2).toString()} USD"
+            if(item.trackName != null) {
+                item.trackPrice?.toString()
+            }
+            else {
+                item.collectionPrice?.toString()
+            }
 
-        binding.priceFee.text = trackPrice
+       // binding.priceFee.text = "$trackPrice USD"
         itemView.setOnClickListener {
             item.previewUrl?.let(onItemClick)
         }

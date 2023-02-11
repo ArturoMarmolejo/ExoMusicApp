@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/price_fee"
-            android:text="Song price"
+            android:text="1.00 USD"
             android:layout_toRightOf="@+id/musicAlbum_image"
             android:layout_below="@+id/artist_name" />
 
