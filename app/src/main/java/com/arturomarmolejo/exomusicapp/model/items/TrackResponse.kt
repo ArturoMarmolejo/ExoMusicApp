@@ -30,8 +30,4 @@ data class TrackResponse(
     val trackNumber: Int?,
     @Json(name = "trackPrice")
     val trackPrice: Double?,
-    @Json(name = "trackRentalPrice")
-    val trackTimeMillis: Int?,
-    @Json(name = "trackViewUrl")
-    val trackViewUrl: String?,
 )

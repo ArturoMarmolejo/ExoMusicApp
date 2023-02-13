@@ -23,7 +23,7 @@ class ExoMusicViewModel @Inject constructor(
 
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 
-    private val genres = arrayListOf("classic", "rock", "pop")
+    private val genres = arrayListOf("classick", "rock", "pop")
     var trackUri : String = ""
     private var isInitialized = false
 
@@ -48,7 +48,7 @@ class ExoMusicViewModel @Inject constructor(
             viewModelScope.launch(ioDispatcher) {
                 exoMusicRepository.getTracksByGenre(genre).collect() {
                     when(genre) {
-                        "classic" -> _classicTrackList.postValue(it)
+                        "classick" -> _classicTrackList.postValue(it)
                         "rock" -> _rockTrackList.postValue(it)
                         "pop" -> _popTrackList.postValue(it)
                     }

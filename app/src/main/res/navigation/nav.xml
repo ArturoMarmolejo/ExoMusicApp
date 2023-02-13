@@ -24,8 +24,8 @@
     </fragment>
     <fragment
         android:id="@+id/classicFragment"
-        android:name="com.arturomarmolejo.exomusicapp.views.rock.RockFragment"
-        android:label="RockFragment"
+        android:name="com.arturomarmolejo.exomusicapp.views.classic.ClassicFragment"
+        android:label="classicFragment"
         tools:layout="@layout/fragment_track_list">
         <action
             android:id="@+id/action_classicFragment_to_playerFragment"
